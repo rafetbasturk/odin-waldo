@@ -35,7 +35,7 @@ const reducer = (state, action) => {
       let ms = (finish - start) % 1000
       minutes = minutes < 10 ? `0${minutes}` : minutes
       seconds = seconds < 10 ? `0${seconds}` : seconds
-      ms = ms < 100 ? `0${ms}` : ms
+      ms = ms < 100 ? `0${ms}` : ms < 10 ? `00${ms}` : ms
       const time = `${minutes} : ${seconds} : ${ms}`
 
       return {
